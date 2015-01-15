@@ -1,0 +1,14 @@
+<config>
+	<chef_servers>
+		<chef_server>
+			<id> ID of this chef server </id>
+			<provider> Cloud provider </provider>
+			<hostname> Hostname/IP of this chef server </hostname>
+			<username> Username </username>
+			<password> Password </password>
+			<attributes>
+				Cloud-provider-dependent attribute list
+			</attributes>
+		</chef_server>
+	</chef_servers>
+</config>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-10-27 17:08:14 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.greenpipe.workspace.model.bean.User" table="user" catalog="easypipe">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="30" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="30" not-null="true" />
+        </property>
+        <property name="deleted" type="int">
+            <column name="deleted" not-null="true" />
+        </property>
+        <property name="active" type="int">
+            <column name="active" not-null="true" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="0" not-null="true" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="0" not-null="true" />
+        </property>
+        <set name="workspaces" table="workspace" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" />
+            </key>
+            <one-to-many class="org.greenpipe.workspace.model.bean.Workspace" />
+        </set>
+    </class>
+</hibernate-mapping>

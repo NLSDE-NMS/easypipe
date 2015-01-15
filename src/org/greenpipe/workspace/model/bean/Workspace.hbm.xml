@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-10-27 17:08:14 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.greenpipe.workspace.model.bean.Workspace" table="workspace" catalog="easypipe">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="org.greenpipe.workspace.model.bean.User" lazy="false" fetch="select">
+            <column name="user_id" />
+        </many-to-one>
+        <property name="server" type="int">
+            <column name="server" not-null="true" />
+        </property>
+        <property name="provider" type="string">
+            <column name="provider" length="30" not-null="true" />
+        </property>
+        <property name="vmSize" type="string">
+            <column name="vm_size" length="30" not-null="true" />
+        </property>
+        <property name="vmNumber" type="int">
+            <column name="vm_number" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="300" not-null="true" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="30" not-null="true" />
+        </property>
+        <property name="isDefault" type="string">
+            <column name="is_default" length="30" not-null="true" />
+        </property>
+        <property name="message" type="string">
+            <column name="message" length="300" not-null="true" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="0" not-null="true" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="0" not-null="true" />
+        </property>
+        <set name="workspaceCookbookAssociations" table="workspace_cookbook_association" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="workspace_id" />
+            </key>
+            <one-to-many class="org.greenpipe.workspace.model.bean.WorkspaceCookbookAssociation" />
+        </set>
+        <set name="vms" table="vm" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="workspace_id" />
+            </key>
+            <one-to-many class="org.greenpipe.workspace.model.bean.Vm" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+
+cookbooks(cookbooks) ::= <<
+cookbooks:
+<cookbooks:{cookbook | - <cookbook>:}; separator="\n">
+>>
+
+nodes() ::= <<
+nodes:
+>>
+
+azure_create(workspace, attributes, recipes, hostname, username, password) ::= <<
+- <workspace.provider> <workspace.vmNumber>:
+    run_list: <recipes:{recipe | recipe[<recipe>]}; separator=",">
+    options: --azure-source-image <attributes.image> --azure-vm-name <hostname>{{n}} --azure-vm-size <workspace.vmSize> --ssh-user <username> --ssh-password <password> --azure-connect-to-existing-dns --azure-dns-name <attributes.service> --azure-subnet-name <attributes.subnet> --azure-storage-account <attributes.storage> --azure-availability-set <attributes.availability> --azure-affinity-group <attributes.affinity>
+>>
+
+azure_bootstrap(hostname, domain, username, password, recipes) ::= <<
+- <hostname>.<domain>:
+    run_list: <recipes:{recipe | recipe[<recipe>]}; separator=",">
+    options: --node-name <hostname> --ssh-user <username> --ssh-password <password> --sudo
+>>
+
+knife() ::= <<
+knife:
+>>
+
+azure_delete(hostname) ::= <<
+- azure server delete:
+  - <hostname> --purge -y
+>>
+
+
+
+
+
+
+
+
+cookbook(cookbook) ::= <<
+<cookbook.name:{name | - <name>:}>
+    <cookbook.version:{version | version: <version>}>
+    <cookbook.options:{options | options: <options>}>
+>>
+
+provider(provider, vm_number) ::= <<
+- <provider> <vm_number>:
+>>

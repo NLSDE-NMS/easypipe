@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-10-27 17:08:14 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.greenpipe.workspace.model.bean.WorkspaceCookbookAssociation" table="workspace_cookbook_association" catalog="easypipe">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cookbook" class="org.greenpipe.workspace.model.bean.Cookbook" fetch="select">
+            <column name="cookbook_id" />
+        </many-to-one>
+        <many-to-one name="workspace" class="org.greenpipe.workspace.model.bean.Workspace" fetch="select">
+            <column name="workspace_id" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

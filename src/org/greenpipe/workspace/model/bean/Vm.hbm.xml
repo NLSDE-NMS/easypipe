@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-10-27 17:08:14 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.greenpipe.workspace.model.bean.Vm" table="vm" catalog="easypipe">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="workspace" class="org.greenpipe.workspace.model.bean.Workspace" fetch="select">
+            <column name="workspace_id" />
+        </many-to-one>
+        <property name="provider" type="string">
+            <column name="provider" length="30" not-null="true" />
+        </property>
+        <property name="size" type="string">
+            <column name="size" length="30" not-null="true" />
+        </property>
+        <property name="hostname" type="string">
+            <column name="hostname" length="30" not-null="true" />
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="30" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="30" not-null="true" />
+        </property>
+        <property name="image" type="string">
+            <column name="image" length="300" not-null="true" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="30" not-null="true" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="0" not-null="true" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+
+
+workspaces_begin() ::= <<
+\<workspaces>
+>>
+
+workspaces_status(state, message) ::= <<
+\<state><state>\</state>
+\<message><message>\</message>
+>>
+
+workspaces_end() ::= <<
+\</workspaces>
+>>
+
+
+status(workspace, master, username, password) ::= <<
+\<workspace>
+	\<id><workspace.id>\</id>
+	\<state><workspace.state>\</state>
+	\<default><workspace.isDefault>\</default>
+	\<message><workspace.message>\</message>
+	\<provider><workspace.provider>\</provider>
+	\<vm_number><workspace.vmNumber>\</vm_number>
+	\<vm_size><workspace.vmSize>\</vm_size>
+	\<description><workspace.description>\</description>
+	\<master><master>\</master>
+	\<username><username>\</username>
+	\<password><password>\</password>
+\</workspace>
+>>

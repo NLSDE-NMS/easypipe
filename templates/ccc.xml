@@ -1,0 +1,12 @@
+<workspace>
+	<id> ID of this workspace </id>
+	<state> State of this workspace </state>
+	<description> Description for this workspace </description>
+	<is_default> Is this workspace the default ? </is_default>
+	<provider> Provider of this workspace </provider>
+	<vm_number> VM number of this workspace </vm_number>
+	<vm_size> VM size of this workspace </vm_size>
+	<hostname> Hostname of this workspace </hostname>
+	<username> Username of this workspace </username>
+	<drm> Distributed resource manager of this workspace </drm>
+</workspace>

@@ -1,0 +1,27 @@
+<configs>
+
+	<servers>
+		<server>
+			<id>1</id>
+			<provider>azure</provider>
+			<hostname>137.116.160.182</hostname>
+			<username>root</username>
+			<password>Jc7812942</password>
+			<attributes>
+				<image>b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-12_04_4-LTS-amd64-server-20140717-en-us-30GB</image>
+				<service>saasservicer</service>
+				<subnet>Subnet-1</subnet>
+				<storage>saasstorager</storage>
+				<availability>saasseter</availability>
+				<affinity>saas</affinity>
+				<domain>saasservicer.h2.internal.cloudapp.net</domain>
+				<subscription>39d15643-047a-476b-8254-cf9c8d0a7a71</subscription>
+				<keyStore>src/configuration/WindowsAzureKeyStore.jks</keyStore>
+				<version>2014-06-01</version>
+				<url>https://management.core.windows.net</url>
+				<master>saasmaster</master>
+			</attributes>
+		</server>
+	</servers>
+
+</configs>

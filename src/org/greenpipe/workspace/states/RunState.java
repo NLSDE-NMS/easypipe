@@ -1,0 +1,37 @@
+package org.greenpipe.workspace.states;
+
+public enum RunState {
+	// Resources
+	RESOURCES_SUCCESSFUL, RESOURCES_FAILED,
+	
+	// YAML
+	YAML_SUCCESSFUL, YAML_FAILED,
+	
+	// Remote status of chef engine
+	REMOTE_SUCCESSFUL, REMOTE_FAILED,
+	
+	// Create
+	CREATE_SUCCESSFUL, CREATE_FAILED,
+	
+	// Bootstrap
+	BOOTSTRAP_SUCCESSFUL, BOOTSTRAP_FAILED,
+	
+	// Delete
+	DELETE_SUCCESSFUL, DELETE_FAILED,
+	
+	// List
+	LIST_SUCCESSFUL, LIST_FAILED,
+	
+	// Start
+	START_SUCCESSFUL, START_FAILED,
+	
+	// Stop
+	STOP_SUCCESSFUL, STOP_FAILED,
+	
+	// Restart
+	RESTART_SUCCESSFUL, RESTART_FAILED,
+	
+	// DRM
+	DRM_SUCCESSFUL, DRM_FAILED
+
+}
